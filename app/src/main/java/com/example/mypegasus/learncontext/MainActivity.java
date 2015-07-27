@@ -4,26 +4,45 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
 
-//    private TextView textView;
+    private TextView textView;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        System.out.println("MainActivity onCreate");
 //        textView = new TextView(this);
 //        textView.setText("Hello Android");
 //        textView.setText(R.string.hello_world);
 //        setContentView(textView);
 //        System.out.println(getResources().getText(R.string.hello_world));
 
-        ImageView iv = new ImageView(this);
-        iv.setImageResource(R.mipmap.ic_launcher);
-        setContentView(iv);
+//        ImageView iv = new ImageView(this);
+//        iv.setImageResource(R.mipmap.ic_launcher);
+//        setContentView(iv);
+        setContentView(R.layout.activity_main);
+
+        textView = (TextView) findViewById(R.id.textView);
+        editText = (EditText) findViewById(R.id.editText);
+
+        textView.setText("共享的数据是：" + ((MyApplication)getApplicationContext()).getTextDate());
+
+        findViewById(R.id.btn_saveData).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MyApplication)getApplicationContext()).setTextDate(editText.getText().toString());
+                textView.setText("共享的数据是：" + editText.getText().toString());
+            }
+        });
     }
 
     @Override
