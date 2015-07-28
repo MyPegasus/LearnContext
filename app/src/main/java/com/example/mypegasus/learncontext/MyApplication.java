@@ -25,7 +25,7 @@ public class MyApplication extends Application{
     }
 
     /**
-     * ÖÕÖ¹£¬½áÊø
+     * ç»ˆæ­¢ï¼Œç»“æŸ
      * */
     @Override
     public void onTerminate() {
@@ -35,7 +35,7 @@ public class MyApplication extends Application{
     }
 
     /**
-     * µÍÄÚ´æ
+     * ä½å†…å­˜
      * */
     @Override
     public void onLowMemory() {
@@ -45,7 +45,7 @@ public class MyApplication extends Application{
     }
 
     /**
-     * ÇåÀíÄÚ´æ
+     * æ¸…ç†å†…å­˜
      * */
     @Override
     public void onTrimMemory(int level) {
@@ -55,7 +55,7 @@ public class MyApplication extends Application{
     }
 
     /**
-     * ÅäÖÃ±ä»¯
+     * é…ç½®å˜åŒ–
      * */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
